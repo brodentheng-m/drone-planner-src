@@ -1,0 +1,35 @@
+{
+  "name": "drone-planner",
+  "version": "1.1.4",
+  "description": "CoDrone EDU Flight Path Planner + Code Generator",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build": "vite build",
+    "package": "vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "build": {
+    "appId": "com.drone.planner",
+    "productName": "Drone Planner",
+    "directories": { "output": "dist-app" },
+    "files": ["dist/**/*", "electron/**/*"],
+    "linux": { "target": "AppImage" },
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg" }
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.0",
+    "wait-on": "^8.0.1"
+  },
+  "allowScripts": {
+    "electron": true,
+    "esbuild": true
+  }
+}

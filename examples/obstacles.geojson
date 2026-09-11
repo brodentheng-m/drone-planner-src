@@ -1,0 +1,25 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Geo Tower", "type": "tower", "height": 1.5 },
+      "geometry": { "type": "Point", "coordinates": [1.0, -1.5] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Geo Cone", "type": "cone", "height": 0.4, "radius": 0.2 },
+      "geometry": { "type": "Point", "coordinates": [-1.5, 1.5] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Geo Wall", "height": 1.0 },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [[-3.0, -3.0], [-1.5, -3.0], [-1.5, -2.0], [-3.0, -2.0], [-3.0, -3.0]]
+        ]
+      }
+    }
+  ]
+}

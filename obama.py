@@ -1,0 +1,138 @@
+from drone import *
+import time
+
+drone = Drone()
+drone.pair()
+time.sleep(2)
+
+# scale = number of feet per grid square (1 foot per marking on plate)
+scale = 1
+pwr = 80
+
+# at power 80, ~0.6 seconds of go() = 1 foot of travel
+FOOT = 0.6 * scale
+
+# HEAD OUTLINE (green) - oval ~4ft wide x 5ft tall
+drone.takeoff()
+time.sleep(1)
+drone.go("up", pwr, 0.5)
+time.sleep(0.3)
+
+drone.set_led("green")
+drone.go("forward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.3)
+drone.go("forward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.15)
+drone.go("forward", pwr, FOOT * 0.4)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("forward", pwr, FOOT * 0.3)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.3)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.4)
+drone.go("right", pwr, FOOT * 0.15)
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("left", pwr, FOOT * 0.15)
+drone.go("backward", pwr, FOOT * 0.4)
+drone.go("left", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.3)
+drone.go("left", pwr, FOOT * 0.1)
+drone.go("forward", pwr, FOOT * 0.3)
+drone.go("left", pwr, FOOT * 0.1)
+drone.go("forward", pwr, FOOT * 0.4)
+drone.go("left", pwr, FOOT * 0.15)
+drone.go("forward", pwr, FOOT * 0.5)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.5)
+
+# HAIR (blue) - across top of head ~3ft wide
+drone.set_led("blue")
+drone.go("left", pwr, FOOT * 0.3)
+drone.go("forward", pwr, FOOT * 0.3)
+drone.go("right", pwr, FOOT * 1.5)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 1.5)
+drone.go("backward", pwr, FOOT * 0.3)
+
+# LEFT EYE (cyan) - ~1ft diamond
+drone.set_led("cyan")
+drone.go("left", pwr, FOOT * 0.8)
+drone.go("backward", pwr, FOOT * 0.3)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+
+# RIGHT EYE (cyan)
+drone.go("right", pwr, FOOT * 1.5)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("backward", pwr, FOOT * 0.2)
+
+# NOSE (red) - small triangle ~0.5ft
+drone.set_led("red")
+drone.go("left", pwr, FOOT * 0.8)
+drone.go("forward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.2)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.5)
+
+# MOUTH / SMILE (yellow) - curve ~2ft wide
+drone.set_led("yellow")
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("left", pwr, FOOT * 0.4)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.3)
+drone.go("backward", pwr, FOOT * 0.1)
+drone.go("right", pwr, FOOT * 0.8)
+drone.go("backward", pwr, FOOT * 0.1)
+drone.go("right", pwr, FOOT * 0.3)
+drone.go("backward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.4)
+
+# LEFT EAR (white) - ~0.5ft diamond
+drone.set_led("white")
+drone.go("left", pwr, FOOT * 1.0)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("left", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.2)
+
+# RIGHT EAR (white)
+drone.go("right", pwr, FOOT * 2.0)
+drone.go("forward", pwr, FOOT * 0.2)
+drone.go("right", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.5)
+drone.go("left", pwr, FOOT * 0.1)
+drone.go("backward", pwr, FOOT * 0.2)
+
+# LAND
+drone.set_led("green")
+time.sleep(0.5)
+drone.set_led("off")
+drone.land()
+drone.close()

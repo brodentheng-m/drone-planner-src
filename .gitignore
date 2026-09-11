@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-app/
+*.AppImage
+*.log
+.DS_Store
+.obsidian/workspace.json
+BUILD_LOG.md
+update.sh
+Vault Summary.md
+Changelog.md
+Quick Start.md
+Development Notes.md
+Testing Guide.md
+API Reference.md

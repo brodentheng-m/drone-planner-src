@@ -1,0 +1,5 @@
+type,x,y,z,width,height,depth,radius,name,rotation_x,rotation_y,rotation_z
+wall,0.0,0.5,1.5,0.5,1.0,2.0,,Wall C,0,1.5708,0
+tower,0.0,0.75,-1.5,0.3,1.5,0.3,,Tower B,0,0,0
+cone,2.0,0.2,1.0,,0.4,,0.2,Cone C,0,0,0
+cone,-2.0,0.2,1.0,,0.4,,0.2,Cone D,0,0,0
